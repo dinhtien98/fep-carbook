@@ -1,3 +1,62 @@
-.a{
-    height: 200vh;
+.video{
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    pointer-events: none;
+}
+iframe {
+    width: 100%;
+    height: 80vh;
+}
+.contain-main{
+    width: 100%;
+    height: 80vh;
+    background: black;
+    opacity: 0.8;
+    align-content: center;
+    padding: 2.5rem 0;
+    text-align: center;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+.contain-main .row .new{
+    text-align: center;
+    margin-top: 2.5rem;
+    padding: 0.5rem;
+    opacity: 1;
+    border-radius: 0.7rem;
+    background-color: #f39c12;
+    color: rgba(var(46, 208, 120), var(#f39c12));
+}
+.contain-main .row h1{
+    color: white;
+}
+.contain-main .row p{
+    color: white;
+}
+
+.contain-main .row button{
+    color: white;
+    background:  #f39c12;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+    text-align: center;
+    margin:1rem 0;
+}
+.contain-main .icondown{
+    margin-top: 0.7rem;
+    justify-content: center;
+    align-content: end;
+    width: 30px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 15px;
+    color: white;
+    padding: 0.5rem 0;
+    animation: icondow 0.5s linear infinite alternate;
+}
+.contain-main .icondown i{
+    color: white;
 }
