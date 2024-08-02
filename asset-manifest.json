@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fep-carbook/static/css/main.b4091cad.css",
+    "main.js": "/fep-carbook/static/js/main.aeba5bbe.js",
+    "index.html": "/fep-carbook/index.html",
+    "main.b4091cad.css.map": "/fep-carbook/static/css/main.b4091cad.css.map",
+    "main.aeba5bbe.js.map": "/fep-carbook/static/js/main.aeba5bbe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4091cad.css",
+    "static/js/main.aeba5bbe.js"
+  ]
+}
