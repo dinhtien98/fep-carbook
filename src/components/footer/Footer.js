@@ -20,17 +20,17 @@ export default function Footer() {
               <ul className="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li className="ftco-animate">
                   <a href="#">
-                    <span className="icon-twitter"></span>
+                    <span><i class="fa-brands fa-twitter"></i></span>
                   </a>
                 </li>
                 <li className="ftco-animate">
                   <a href="#">
-                    <span className="icon-facebook"></span>
+                    <span><i class="fa-brands fa-facebook"></i></span>
                   </a>
                 </li>
                 <li className="ftco-animate">
                   <a href="#">
-                    <span className="icon-instagram"></span>
+                    <span><i class="fa-brands fa-instagram"></i></span>
                   </a>
                 </li>
               </ul>
