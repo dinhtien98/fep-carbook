@@ -32,7 +32,7 @@ export default function Header() {
             <li className="nav-item"><a href="login.html" className="nav-link">Login</a></li>
             <li className="nav-item"><a href="register.html" className="nav-link">Signup</a></li>
             <li className="nav-item"><a href="profile.html" className="nav-link"><i class="fa-solid fa-user"></i></a></li>
-			<li className="nav-item"><a href="profile.html" className="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+			<li className="nav-item"><a href="profile.html" className="nav-link"><i class="fa-solid fa-bell"></i></a></li>
           </ul>
           <div className={`input-group ${isNavOpen ? 'd-flex' : 'd-none d-lg-flex'}`}>
             <input type="text" className="form-control" placeholder="Search for car..." aria-label="Search" aria-describedby="search-button"/>

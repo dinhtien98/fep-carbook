@@ -2,7 +2,11 @@ import React from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import "./home.css";
+import SlideShow from "../../components/slideShowHome/SliceShow";
+import FormBookCar from "../../components/formBookCar/FormBookCar";
 
+const bgimage1 = `${process.env.PUBLIC_URL}/img/bg_1.jpg`;
+const bgimage2 = `${process.env.PUBLIC_URL}/img/bg_3.jpg`;
 
 export default function Home() {
   return (
@@ -11,14 +15,18 @@ export default function Home() {
       <div
         className="hero-wrap ftco-degree-bg"
         data-stellar-background-ratio="0.5"
+        style={{ backgroundImage: `url(${bgimage1})` }}
       >
         <div className="overlay"></div>
         <div className="container">
           <div className="row no-gutters slider-text justify-content-start align-items-center justify-content-center">
             <div className="col-lg-8 ftco-animate">
               <div className="text w-100 text-center mb-md-5 pb-md-5">
-                <h1 className="mb-4">Đi cùng bạn - Đến muôn nơi</h1>
-                <p>Dịch vụ cho thuê xe ô tô mang đến sự tiện lợi và giá rẻ cho mọi nhà</p>
+                <h1 className="mb-4">Cùng bạn đến muôn nơi</h1>
+                <p>
+                  Dịch vụ cho thuê xe ô tô mang đến sự tiện lợi và giá rẻ cho
+                  mọi nhà
+                </p>
               </div>
             </div>
           </div>
@@ -27,78 +35,60 @@ export default function Home() {
 
       <section className="ftco-section ftco-no-pt bg-light">
         <div className="container">
-          <div className="row no-gutters">
-            <div className="col-md-12 featured-top">
-              <div className="row no-gutters">
-                <div className="col-xl-4 d-flex align-items-center">
-                  <form action="#" className="request-form bg-primary">
-                    <h2>Thông tin thuê xe</h2>
-                    <div className="form-group">
-                      <label htmlFor="" className="label">Địa điểm nhận</label>
-                      <input type="text" className="form-control" placeholder="192/5 phú thọ hòa - tân phú - HCM" />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="" className="label">Địa điểm trả</label>
-                      <input type="text" className="form-control" placeholder="192/5 phú thọ hòa - tân phú - HCM" />
-                    </div>
-                    <div className="d-flex">
-                      <div className="form-group pick-up-date">
-                        <label htmlFor="" className="label">Ngày nhận</label>
-                        <input type="date" className="form-control" id="book_pick_date" />
-                      </div>
-                      <div className="form-group pick-drop-date">
-                        <label htmlFor="" className="label">Ngày trả</label>
-                        <input type="date" className="form-control" id="book_off_date" />
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <input type="submit" value="Tìm xe" className="btn btn-success py-3 px-4" />
-                    </div>
-                  </form>
-                </div>
-                <div className="col-xl-8 d-flex align-items-center">
-                  <div className="services-wrap rounded-right w-100">
-                    <h3 className="heading-section mb-4">Cách thức thuê xe</h3>
-                    <div className="row d-flex mb-4">
-                      <div className="col-12 col-md-4 d-flex align-self-stretch ftco-animate">
-                        <div className="services w-100 text-center">
-                          <div className="icon d-flex align-items-center justify-content-center">
-                            <span><i className="fa-solid fa-location-dot"></i></span>
-                          </div>
-                          <div className="text w-100">
-                            <h3 className="heading mb-2">Lựa chọn địa điểm</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-12 col-md-4 d-flex align-self-stretch ftco-animate">
-                        <div className="services w-100 text-center">
-                          <div className="icon d-flex align-items-center justify-content-center">
-                            <span><i className="fa-solid fa-handshake"></i></span>
-                          </div>
-                          <div className="text w-100">
-                            <h3 className="heading mb-2">Lựa chọn xe</h3>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-12 col-md-4 d-flex align-self-stretch ftco-animate">
-                        <div className="services w-100 text-center">
-                          <div className="icon d-flex align-items-center justify-content-center">
-                            <span><i className="fa-solid fa-car"></i></span>
-                          </div>
-                          <div className="text w-100">
-                            <h3 className="heading mb-2">Đặt xe</h3>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <FormBookCar />
+        </div>
+      </section>
+
+      <section class="ftco-section ftco-no-pt bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+              <span class="subheading">Chọn xe thuê</span>
+              <h2 class="mb-2 showcar">Xe được khách hàng yêu thích nhiều</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <SlideShow />
             </div>
           </div>
         </div>
       </section>
 
+      <section class="ftco-section ftco-about">
+        <div class="container">
+          <div class="row no-gutters">
+            <div
+              class="col-md-6 p-md-5 img img-2 d-flex justify-content-center align-items-center"
+              style={{ backgroundImage: `url(${bgimage2})` }}
+            ></div>
+            <div class="col-md-6 wrap-about ftco-animate">
+              <div class="heading-section heading-section-white pl-md-5">
+                <span class="subheading">Thông tin về công ty</span>
+                <h2 class="mb-4">Chào mừng bạn đến với Carbook</h2>
+
+                <p>
+                  Chúng tôi rất vui và hạnh phúc khi nhận được sự quan tâm của
+                  quý khách hàng
+                </p>
+                <p>
+                  CarBook là công ty hàng đầu trong lĩnh vực cho thuê xe ô tô
+                  tại Việt Nam, nổi bật với dịch vụ chuyên nghiệp và đa dạng.
+                  Chúng tôi cung cấp một loạt các dòng xe từ những mẫu xe sang
+                  trọng đến những lựa chọn tiết kiệm, đáp ứng mọi nhu cầu của
+                  khách hàng. Với đội ngũ nhân viên tận tâm và hệ thống quản lý
+                  hiện đại, CarBook cam kết mang đến trải nghiệm thuê xe an
+                  toàn, tiện lợi và linh hoạt nhất. Dịch vụ của chúng tôi không
+                  chỉ giúp khách hàng tiết kiệm thời gian mà còn mang lại sự
+                  thoải mái và hài lòng tối đa trong mỗi hành trình. Hãy để
+                  CarBook đồng hành cùng bạn trên mọi nẻo đường!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <Footer />
     </div>
   );
