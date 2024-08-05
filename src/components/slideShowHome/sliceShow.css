@@ -1,0 +1,102 @@
+.carousel-container {
+    width: 100%;
+    margin: auto;
+  }
+  
+ 
+  .mySwiper {
+    width: 100%;
+  }
+  
+  
+  .mySwiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .mySwiper .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  .mySwiper .swiper-slide div {
+    text-align: center;
+  }
+  
+  .mySwiper .swiper-slide h2 {
+    margin-bottom: 0;
+  }
+  
+  .mySwiper .swiper-slide .namecar{
+    color: #f39c12;
+  }
+
+  .mySwiper .swiper-slide .cat {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .mySwiper .swiper-slide .price {
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  .mySwiper .swiper-slide .btn {
+    margin: 5px;
+    width: 45%;
+  }
+  
+ 
+  @media (max-width: 768px) {
+   
+    .mySwiper {
+      width: 100%;
+    }
+  
+    .mySwiper .swiper-slide {
+      width: 100%;
+    }
+  
+    .mySwiper .swiper-slide img {
+      width: 100%;
+      height: auto;
+    }
+  
+   
+    .mySwiper .swiper-slide .btn {
+      display: block;
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    
+    .mySwiper .swiper-slide h2 {
+      font-size: 16px;
+    }
+  
+    .mySwiper .swiper-slide .price {
+      font-size: 14px;
+    }
+  }
+
+  .swiper-pagination{
+    position:static !important;
+  }
+  
+  .car{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 1rem;
+  }
+
+  .d-flex{
+    justify-content: center !important;
+  }
+
+  .swiper-pagination-bullet-active{
+    background-color: #f39c12 !important;
+  }
