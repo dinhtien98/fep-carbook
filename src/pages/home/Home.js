@@ -64,7 +64,7 @@ export default function Home() {
             ></div>
             <div class="col-md-6 wrap-about ftco-animate">
               <div class="heading-section heading-section-white pl-md-5">
-                <span class="subheading">Thông tin về công ty</span>
+                <span >Thông tin về công ty</span>
                 <h2 class="mb-4">Chào mừng bạn đến với Carbook</h2>
 
                 <p>
@@ -89,6 +89,55 @@ export default function Home() {
         </div>
       </section>
       
+      <section class="ftco-section">
+        <div class="container">
+          <div class="row justify-content-center mb-5">
+            <div class="col-md-7 text-center heading-section ftco-animate">
+              <span class="subheading">Dịch vụ</span>
+              <h2 class="mb-3">Những dịch vụ mới</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="services services-2 w-100 h-100 text-center">
+                <div class="icon d-flex align-items-center justify-content-center"><i class="fa-solid fa-champagne-glasses"></i></div>
+                <div class="text w-100">
+                  <h3 class="heading mb-2">Lễ cưới</h3>
+                  <p>Cung cấp xe cưới đẹp và tiện lợi nhất cho các cặp đôi chuẩn bị về bên nhau</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="services services-2 w-100 h-100 text-center">
+                <div class="icon d-flex align-items-center justify-content-center"><i class="fa-solid fa-bus"></i></div>
+                <div class="text w-100">
+                  <h3 class="heading mb-2">Các tuyến đi thành phố</h3>
+                  <p>Đưa đón bạn từ thành phố này đến thành phố khác một cách nhanh chóng và an toàn</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="services services-2 w-100 h-100 text-center">
+                <div class="icon d-flex align-items-center justify-content-center"><i class="fa-solid fa-plane"></i></div>
+                <div class="text w-100">
+                  <h3 class="heading mb-2 h-100">Đưa đón sân bay</h3>
+                  <p>Đưa đón bạn ra sân bay nhanh chóng và an toàn</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="services services-2 w-100 h-100 text-center">
+                <div class="icon d-flex align-items-center justify-content-center"><i class="fa-solid fa-city"></i></div>
+                <div class="text w-100">
+                  <h3 class="heading mb-2 ">Tham quan thành phố</h3>
+                  <p>Đưa bạn dạo quanh thành phố đi qua những nơi nổi tiếng và cảnh đẹp với giá rẻ tiện lợi và nhanh chóng</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

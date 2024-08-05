@@ -86,6 +86,8 @@
 
 .request-form .btn {
     width: 100%;
+    font-weight: 800;
+    font-size: 1.2rem;
 }
 
 .services-wrap {
@@ -177,3 +179,44 @@
     background-size: cover;
     background-position: center;
 }
+
+.heading-section-white{
+    background-color: #f39c12;
+    padding: 1rem;
+}
+
+.ftco-section {
+    position: relative;
+    padding: 4em 0;
+}
+
+.img.img-2 {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wrap-about {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-overlay {
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+

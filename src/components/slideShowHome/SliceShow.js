@@ -89,10 +89,10 @@ export default function SliceShow() {
                 </div>
                 <p class="d-flex mb-0 d-block">
                   <a href="#" class="btn btn-warning py-2 mr-1">
-                    Book now
+                    Đặt xe
                   </a>{" "}
                   <a href="#" class="btn btn-secondary py-2 ml-1">
-                    Details
+                    Thông tin
                   </a>
                 </p>
               </div>
