@@ -1,0 +1,23 @@
+.justi-center{
+    justify-content: center;
+    margin-top: 2rem;
+}
+.active>.page-link, .page-link{
+    color: #5c636a !important;
+}
+.active>.page-link, .page-link.active{
+    background-color: #f39c12 !important;
+    border-color: #f39c12 !important;
+}
+.dnamecar{
+    min-height: 170px;
+    align-content: flex-end;
+}
+.carimg:hover{
+    transform: scale(1.5);
+    transition: 2s;
+    
+}
+.imgcar{
+    overflow: hidden;
+}

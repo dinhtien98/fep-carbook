@@ -126,14 +126,6 @@
 }
 
 
-.btn-primary {
-    background: #007bff;
-    border: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
-}
-
 .btn-primary:hover {
     background: #0056b3;
 }

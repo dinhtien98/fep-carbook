@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./sliceShow.css";
 import "swiper/css";
@@ -6,6 +6,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "../../redux/carsSlice";
 
 const items = [
   {
@@ -36,6 +38,13 @@ const items = [
 ];
 
 export default function SliceShow() {
+  const {item, status} =useSelector(state=>state.cars)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (status === "start") {
+      dispatch(fetchData());
+    }
+  }, []);
   return (
     <div className="carousel-container">
       <Swiper
@@ -67,31 +76,30 @@ export default function SliceShow() {
           },
         }}
       >
-        {items.map((item) => (
+        {item.map((item) => (
           <SwiperSlide className="text-center" key={item.key}>
             <div className="car">
               <img
-                src={item.src}
-                alt={item.alt}
+                src={`${process.env.PUBLIC_URL}/img/${item.image}.jpg`}
                 style={{ width: "300px", height: "170px" }}
               />
-              <div class="text-center">
-                <h2 class="mb-0">
+              <div className="text-center">
+                <h2 className="mb-0">
                   <a href="#" className="namecar">
-                    Mercedes Grand Sedan
+                    {item.name}
                   </a>
                 </h2>
-                <div class="d-flex mb-3">
-                  <span class="cat">Cheverolet</span>
-                  <p class="price ml-auto">
-                    $500 <span>/day</span>
+                <div className="d-flex mb-3">
+                  <span className="cat">Giá thuê</span>
+                  <p className="price ml-auto">
+                    ${item.price} <span>/ngày</span>
                   </p>
                 </div>
-                <p class="d-flex mb-0 d-block">
-                  <a href="#" class="btn btn-warning py-2 mr-1">
+                <p className="d-flex mb-0 d-block">
+                  <a href="#" className="btn btn-warning py-2 mr-1">
                     Đặt xe
                   </a>{" "}
-                  <a href="#" class="btn btn-secondary py-2 ml-1">
+                  <a href="#" className="btn btn-secondary py-2 ml-1">
                     Thông tin
                   </a>
                 </p>

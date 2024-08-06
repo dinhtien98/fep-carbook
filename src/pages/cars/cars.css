@@ -1,0 +1,31 @@
+
+.hero-wrap-2 {
+    position: relative;
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.slider-text1{
+    height: 80vh;
+}
+
+.breadcrumbs {
+    justify-content: start !important;
+
+}
+
+.textlistcar {
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.car {
+    padding: 1rem;
+}
+
+.car .btn {
+    margin: 5px;
+    width: 45%;
+}

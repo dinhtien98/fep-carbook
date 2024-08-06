@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function FormBookCar() {
+  useEffect(() => {
+    AOS.init({
+      disable: "phone",
+      duration: 700,
+      easing: "ease-out-cubic",
+    });
+  }, []);
   return (
     <div className="row no-gutters">
       <div className="col-md-12 featured-top">
         <div className="row no-gutters">
-          <div className="col-xl-4 d-flex align-items-center">
+          <div className="col-xl-4 d-flex align-items-center" data-aos="fade-up-right">
             <form action="#" className="request-form bg-warning">
               <h2>Thông tin thuê xe</h2>
               <div className="form-group">
@@ -59,7 +68,7 @@ export default function FormBookCar() {
               </div>
             </form>
           </div>
-          <div className="col-xl-8 d-flex align-items-center">
+          <div className="col-xl-8 d-flex align-items-center" data-aos="fade-up-left">
             <div className="services-wrap rounded-right w-100">
               <h3 className="heading-section mb-4">Cách thức thuê xe</h3>
               <div className="row d-flex mb-4">
