@@ -8,7 +8,7 @@ import ListCar from "./ListCar";
 import Pagination from "./Pagination";
 
 export default function Car() {
-  const { item, status, totalPages, currentPage } = useSelector(
+  const { status, totalPages, currentPage } = useSelector(
     (state) => state.cars
   );
   const dispatch = useDispatch();
@@ -36,9 +36,7 @@ export default function Car() {
   return (
     <section className="ftco-section bg-light">
       <div className="container">
-        <div className="row">
-          <ListCar />
-        </div>
+        <ListCar />
         {status === "succeeded" && (
           <Pagination
             currentPage={currentPage}

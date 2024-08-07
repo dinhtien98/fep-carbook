@@ -8,43 +8,26 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/carsSlice";
-
-const items = [
-  {
-    key: 1,
-    src: `${process.env.PUBLIC_URL}/img/car-1.jpg`,
-    alt: "Slide 1",
-  },
-  {
-    key: 2,
-    src: `${process.env.PUBLIC_URL}/img/car-2.jpg`,
-    alt: "Slide 2",
-  },
-  {
-    key: 3,
-    src: `${process.env.PUBLIC_URL}/img/car-3.jpg`,
-    alt: "Slide 3",
-  },
-  {
-    key: 4,
-    src: `${process.env.PUBLIC_URL}/img/car-4.jpg`,
-    alt: "Slide 4",
-  },
-  {
-    key: 5,
-    src: `${process.env.PUBLIC_URL}/img/car-5.jpg`,
-    alt: "Slide 5",
-  },
-];
+import { Link } from "react-router-dom";
 
 export default function SliceShow() {
-  const {item, status} =useSelector(state=>state.cars)
+  const { items, status } = useSelector(state => state.cars);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    if (status === "start") {
-      dispatch(fetchData());
+    if (status === "start" || items.length === 0) {
+      dispatch(fetchData(1));
     }
-  }, []);
+  }, [dispatch, status, items.length]);
+
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "failed") {
+    return <p>Error loading data.</p>;
+  }
+
   return (
     <div className="carousel-container">
       <Swiper
@@ -52,7 +35,7 @@ export default function SliceShow() {
         slidesPerView={3}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -76,14 +59,15 @@ export default function SliceShow() {
           },
         }}
       >
-        {item.map((item) => (
-          <SwiperSlide className="text-center" key={item.key}>
+        {items.map((item) => (
+          <SwiperSlide className="text-center" key={item.id}>
             <div className="car">
               <img
                 src={`${process.env.PUBLIC_URL}/img/${item.image}.jpg`}
                 style={{ width: "300px", height: "170px" }}
+                alt={item.name}
               />
-              <div className="text-center">
+              <div className="text-center dnamecar">
                 <h2 className="mb-0">
                   <a href="#" className="namecar">
                     {item.name}
@@ -99,9 +83,7 @@ export default function SliceShow() {
                   <a href="#" className="btn btn-warning py-2 mr-1">
                     Đặt xe
                   </a>{" "}
-                  <a href="#" className="btn btn-secondary py-2 ml-1">
-                    Thông tin
-                  </a>
+                  <Link to={`/carsingle/${item.id}`} className="btn btn-secondary py-2 ml-1">Thông tin</Link>
                 </p>
               </div>
             </div>

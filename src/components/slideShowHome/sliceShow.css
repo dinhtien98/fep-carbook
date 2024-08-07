@@ -100,3 +100,8 @@
   .swiper-pagination-bullet-active{
     background-color: #f39c12 !important;
   }
+
+  .dnamecar{
+    min-height: 70px;
+    align-content: flex-end;
+}

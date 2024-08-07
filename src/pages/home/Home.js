@@ -111,7 +111,7 @@ export default function Home() {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-3" data-aos="fade-up">
+            <div className="col-md-3" data-aos="fade-up" data-aos-delay="50">
               <div className="services services-2 w-100 h-100 text-center">
                 <div className="icon d-flex align-items-center justify-content-center"><i class="fa-solid fa-champagne-glasses"></i></div>
                 <div className="text w-100">
@@ -120,7 +120,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-md-3" data-aos="fade-up" data-aos-delay="50">
+            <div className="col-md-3" data-aos="fade-up" data-aos-delay="100">
               <div className="services services-2 w-100 h-100 text-center">
                 <div className="icon d-flex align-items-center justify-content-center"><i class="fa-solid fa-bus"></i></div>
                 <div className="text w-100">
@@ -129,7 +129,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div className="col-md-3" data-aos="fade-up" data-aos-delay="150">
               <div className="services services-2 w-100 h-100 text-center">
                 <div className="icon d-flex align-items-center justify-content-center"><i className="fa-solid fa-plane"></i></div>
                 <div className="text w-100">
@@ -138,7 +138,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="col-md-3" data-aos="fade-up" data-aos-delay="150">
+            <div className="col-md-3" data-aos="fade-up" data-aos-delay="200">
               <div className="services services-2 w-100 h-100 text-center">
                 <div className="icon d-flex align-items-center justify-content-center"><i className="fa-solid fa-city"></i></div>
                 <div className="text w-100">

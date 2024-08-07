@@ -1,0 +1,218 @@
+
+.hero-wrap-2 {
+    position: relative;
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.slider-text1{
+    height: 80vh;
+}
+
+.breadcrumbs {
+    justify-content: start !important;
+
+}
+
+.textlistcar {
+    transform: translateY(100%);
+    position: absolute;
+}
+
+.car {
+    padding: 1rem;
+}
+
+.car .btn {
+    margin: 5px;
+    width: 45%;
+}
+
+.breadcrumbs .nav-link {
+    color: white;
+  }
+  
+  .breadcrumbs .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .bread {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  /* Car Details Section */
+  .ftco-section {
+    padding: 60px 0;
+  }
+  
+  .car-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .img {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .carousel-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .mySwiper {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .mySwiper img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .text {
+    margin: 10px 0;
+  }
+  
+  .text h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+
+  .services {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .services .icon {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .services .text {
+    margin-left: 10px;
+  }
+  
+  .services .heading {
+    font-size: 1.2rem;
+  }
+  
+  
+  .pills {
+    margin-top: 20px;
+  }
+  
+  .nav-pills .nav-link {
+    color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 0;
+    margin-right: 5px;
+  }
+  
+  .nav-pills .nav-link.active {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+  }
+  
+  .tab-content {
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-top: none;
+  }
+  
+  .tab-pane {
+    margin-top: 20px;
+  }
+  
+  .features {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .features .check {
+    color: green;
+  }
+  
+  .features .remove {
+    color: red;
+  }
+  
+  .features li {
+    margin-bottom: 10px;
+  }
+  
+  .features .ion-ios-checkmark {
+    color: green;
+    margin-right: 10px;
+  }
+  
+  .features .ion-ios-close {
+    color: red;
+    margin-right: 10px;
+  }
+  
+
+  .review {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+  }
+  
+  .review .user-img {
+    background-size: cover;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .review .desc {
+    flex: 1;
+  }
+  
+  .review .head {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .review .star {
+    margin-bottom: 10px;
+  }
+  
+  .review .icon-reply {
+    color: #007bff;
+  }
+  
+  .rating-wrap {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  .rating-wrap .head {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .rating-wrap .star {
+    margin-bottom: 10px;
+  }
+  
+  .rating-wrap .star span {
+    font-size: 1.2rem;
+    color: gold;
+  }
+  
+  .rating-wrap span {
+    margin-right: 10px;
+  }
+  
+  .services{
+    min-width: 200px;
+  }

@@ -1,9 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchDataAll } from "../../redux/carsSlice";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const { itemAll } = useSelector(state => state.cars);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchDataAll());
+  }, [dispatch]);
+
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+    setInputValue(value);
+
+    if (value.length > 0 && Array.isArray(itemAll)) {
+      const filteredSuggestions = itemAll.filter((item) =>
+        item.name.toLowerCase().includes(value.toLowerCase())
+      );
+      setSuggestions(filteredSuggestions);
+    } else {
+      setSuggestions([]);
+    }
+  };
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -60,25 +84,23 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/singup">
-                Singup
+              <Link className="nav-link" to="/signup">
+                Signup
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/profile">
-                <i class="fa-solid fa-user"></i>
+                <i className="fa-solid fa-user"></i>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/messenger">
-                <i class="fa-solid fa-bell"></i>
+                <i className="fa-solid fa-bell"></i>
               </Link>
             </li>
           </ul>
           <div
-            className={`input-group ${
-              isNavOpen ? "d-flex" : "d-none d-lg-flex"
-            }`}
+            className={`input-group ${isNavOpen ? "d-flex" : "d-none d-lg-flex"}`}
           >
             <input
               type="text"
@@ -86,6 +108,8 @@ export default function Header() {
               placeholder="Search for car..."
               aria-label="Search"
               aria-describedby="search-button"
+              value={inputValue}
+              onChange={handleInputChange}
             />
             <div className="input-group-append">
               <button
@@ -96,6 +120,19 @@ export default function Header() {
                 Search
               </button>
             </div>
+            {suggestions.length > 0 && (
+              <div className="dropdown-list">
+                {suggestions.map((suggestion) => (
+                  <Link
+                    key={suggestion.id}
+                    className="dropdown-item"
+                    to={`/carsingle/${suggestion.id}`}
+                  >
+                    {suggestion.name} 
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

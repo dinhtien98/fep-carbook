@@ -21,3 +21,6 @@
 .imgcar{
     overflow: hidden;
 }
+.form-select{
+    width: 20% !important;
+}
