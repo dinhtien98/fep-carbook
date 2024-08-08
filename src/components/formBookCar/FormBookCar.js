@@ -1,21 +1,74 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 export default function FormBookCar() {
+  const [pickUpLocation, setPickUpLocation] = useState("");
+  const [dropOffLocation, setDropOffLocation] = useState("");
+  const [pickUpDate, setPickUpDate] = useState("");
+  const [dropOffDate, setDropOffDate] = useState("");
+
   useEffect(() => {
     AOS.init({
       disable: "phone",
       duration: 700,
       easing: "ease-out-cubic",
     });
+
+    const savedData = localStorage.getItem("pickcar");
+    if (savedData) {
+      const { pickUpLocation, dropOffLocation, pickUpDate, dropOffDate } = JSON.parse(savedData);
+      setPickUpLocation(pickUpLocation || "");
+      setDropOffLocation(dropOffLocation || "");
+      setPickUpDate(pickUpDate || "");
+      setDropOffDate(dropOffDate || "");
+    }
   }, []);
+
+  useEffect(() => {
+    const formData = {
+      pickUpLocation,
+      dropOffLocation,
+      pickUpDate,
+      dropOffDate,
+    };
+    localStorage.setItem("pickCar", JSON.stringify(formData));
+  }, [pickUpLocation, dropOffLocation, pickUpDate, dropOffDate]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault(); 
+
+    const carId = localStorage.getItem("carId");
+
+    if (!carId) {
+      alert("Vui lòng chọn xe trước khi đặt xe."); 
+      return;
+    }
+
+    
+    console.log("Form submitted with the following data:");
+    console.log({
+      pickUpLocation,
+      dropOffLocation,
+      pickUpDate,
+      dropOffDate,
+      carId,
+    });
+
+    
+    localStorage.removeItem("pickcar");
+  };
+
   return (
     <div className="row no-gutters">
       <div className="col-md-12 featured-top">
         <div className="row no-gutters">
-          <div className="col-xl-4 d-flex align-items-center" data-aos="fade-up-right">
-            <form action="#" className="request-form bg-warning">
+          <div
+            className="col-xl-4 d-flex align-items-center"
+            data-aos="fade-up-right"
+          >
+            <form onSubmit={handleSubmit} className="request-form bg-warning">
               <h2>Thông tin thuê xe</h2>
               <div className="form-group">
                 <label htmlFor="" className="label">
@@ -24,7 +77,9 @@ export default function FormBookCar() {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="192/5 phú thọ hòa - tân phú - HCM"
+                  placeholder="Nhập vào địa chỉ"
+                  value={pickUpLocation}
+                  onChange={(e) => setPickUpLocation(e.target.value)}
                 />
               </div>
               <div className="form-group">
@@ -34,7 +89,9 @@ export default function FormBookCar() {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="192/5 phú thọ hòa - tân phú - HCM"
+                  placeholder="Nhập vào địa chỉ"
+                  value={dropOffLocation}
+                  onChange={(e) => setDropOffLocation(e.target.value)}
                 />
               </div>
               <div className="d-flex">
@@ -46,6 +103,8 @@ export default function FormBookCar() {
                     type="date"
                     className="form-control"
                     id="book_pick_date"
+                    value={pickUpDate}
+                    onChange={(e) => setPickUpDate(e.target.value)}
                   />
                 </div>
                 <div className="form-group pick-drop-date">
@@ -56,19 +115,29 @@ export default function FormBookCar() {
                     type="date"
                     className="form-control"
                     id="book_off_date"
+                    value={dropOffDate}
+                    onChange={(e) => setDropOffDate(e.target.value)}
                   />
                 </div>
               </div>
               <div className="form-group">
+                <Link to={`/cars`} className="btn btn-secondary py-2 ml-1">
+                  Chọn xe
+                </Link>
+              </div>
+              <div className="form-group">
                 <input
                   type="submit"
-                  value="Tìm xe"
+                  value="Đặt xe"
                   className="btn btn-secondary py-3 px-4"
                 />
               </div>
             </form>
           </div>
-          <div className="col-xl-8 d-flex align-items-center" data-aos="fade-up-left">
+          <div
+            className="col-xl-8 d-flex align-items-center"
+            data-aos="fade-up-left"
+          >
             <div className="services-wrap rounded-right w-100">
               <h3 className="heading-section mb-4">Cách thức thuê xe</h3>
               <div className="row d-flex mb-4">

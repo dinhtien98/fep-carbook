@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { fetchDataId } from "../../redux/carsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -32,7 +32,6 @@ export default function Carsingle() {
     });
   }, []);
   const bgimage1 = `${process.env.PUBLIC_URL}/img/${item.image}.jpg`;
-  console.log(item);
   return (
     <>
       <Header />
@@ -328,7 +327,7 @@ export default function Carsingle() {
             <div className="col-md-12 heading-section text-center ftco-animate mb-5">
               <span className="subheading">Lựa chọn khác</span>
               <h2 className="mb-2 showcar">
-                Xe được khách hàng yêu thích nhiều
+                Xe được khách hàng yêu thích
               </h2>
             </div>
           </div>

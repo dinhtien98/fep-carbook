@@ -7,18 +7,18 @@ import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchData } from "../../redux/carsSlice";
+import { fetchDataAll } from "../../redux/carsSlice";
 import { Link } from "react-router-dom";
 
 export default function SliceShow() {
-  const { items, status } = useSelector(state => state.cars);
+  const { itemAll, status } = useSelector(state => state.cars);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (status === "start" || items.length === 0) {
-      dispatch(fetchData(1));
+    if (status === "start" || itemAll.length === 0) {
+      dispatch(fetchDataAll());
     }
-  }, [dispatch, status, items.length]);
+  }, []);
 
   if (status === "loading") {
     return <p>Loading...</p>;
@@ -59,7 +59,7 @@ export default function SliceShow() {
           },
         }}
       >
-        {items.map((item) => (
+        {itemAll.map((item) => (
           <SwiperSlide className="text-center" key={item.id}>
             <div className="car">
               <img

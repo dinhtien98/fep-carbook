@@ -56,7 +56,7 @@ export default function Home() {
           <div className="row justify-content-center">
             <div className="col-md-12 heading-section text-center ftco-animate mb-5">
               <span className="subheading">Chọn xe thuê</span>
-              <h2 className="mb-2 showcar">Xe được khách hàng yêu thích nhiều</h2>
+              <h2 className="mb-2 showcar">Xe được khách hàng yêu thích</h2>
             </div>
           </div>
           <div className="row">

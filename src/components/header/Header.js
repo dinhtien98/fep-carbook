@@ -94,7 +94,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/messenger">
+              <Link className="nav-link" to="/Cart">
                 <i className="fa-solid fa-bell"></i>
               </Link>
             </li>
