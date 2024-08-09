@@ -15,15 +15,6 @@ export default function FormBookCar() {
       duration: 700,
       easing: "ease-out-cubic",
     });
-
-    const savedData = localStorage.getItem("pickcar");
-    if (savedData) {
-      const { pickUpLocation, dropOffLocation, pickUpDate, dropOffDate } = JSON.parse(savedData);
-      setPickUpLocation(pickUpLocation || "");
-      setDropOffLocation(dropOffLocation || "");
-      setPickUpDate(pickUpDate || "");
-      setDropOffDate(dropOffDate || "");
-    }
   }, []);
 
   useEffect(() => {
@@ -45,18 +36,6 @@ export default function FormBookCar() {
       alert("Vui lòng chọn xe trước khi đặt xe."); 
       return;
     }
-
-    
-    console.log("Form submitted with the following data:");
-    console.log({
-      pickUpLocation,
-      dropOffLocation,
-      pickUpDate,
-      dropOffDate,
-      carId,
-    });
-
-    
     localStorage.removeItem("pickcar");
   };
 

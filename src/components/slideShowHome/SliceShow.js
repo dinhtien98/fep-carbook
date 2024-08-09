@@ -9,6 +9,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDataAll } from "../../redux/carsSlice";
 import { Link } from "react-router-dom";
+import AddCar from "../addCar/AddCar";
 
 export default function SliceShow() {
   const { itemAll, status } = useSelector(state => state.cars);
@@ -80,9 +81,7 @@ export default function SliceShow() {
                   </p>
                 </div>
                 <p className="d-flex mb-0 d-block">
-                  <a href="#" className="btn btn-warning py-2 mr-1">
-                    Đặt xe
-                  </a>{" "}
+                  <AddCar items={item}/>
                   <Link to={`/carsingle/${item.id}`} className="btn btn-secondary py-2 ml-1">Thông tin</Link>
                 </p>
               </div>

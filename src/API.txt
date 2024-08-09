@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Toyota",
+    "status": false,
+    "image": "car-1",
+    "price": 78,
+    "imageDetail": [
+      "car-1",
+      "car-1",
+      "car-1"
+    ],
+    "seats": 2,
+    "id": "1"
+  },
+  {
+    "name": "Chevrolet",
+    "status": false,
+    "image": "car-2",
+    "price": 44,
+    "imageDetail": [
+      "car-2",
+      "car-2",
+      "car-2"
+    ],
+    "seats": 4,
+    "id": "2"
+  },
+  {
+    "name": "Ford",
+    "status": false,
+    "image": "car-3",
+    "price": 76,
+    "imageDetail": [
+      "car-3",
+      "car-3",
+      "car-3"
+    ],
+    "seats": 6,
+    "id": "3"
+  },
+  {
+    "name": "Honda",
+    "status": false,
+    "image": "car-4",
+    "price": 0,
+    "imageDetail": [
+      "car-4",
+      "car-4",
+      "car-4"
+    ],
+    "seats": 2,
+    "id": "4"
+  },
+  {
+    "name": "Hyundai",
+    "status": false,
+    "image": "car-5",
+    "price": 18,
+    "imageDetail": [
+      "car-5",
+      "car-5",
+      "car-5"
+    ],
+    "seats": 4,
+    "id": "5"
+  },
+  {
+    "name": "Isuzu",
+    "status": false,
+    "image": "car-6",
+    "price": 2,
+    "imageDetail": [
+      "car-6",
+      "car-6",
+      "car-6"
+    ],
+    "seats": 6,
+    "id": "6"
+  },
+  {
+    "name": "Suzuki",
+    "status": false,
+    "image": "car-7",
+    "price": 44,
+    "imageDetail": [
+      "car-7",
+      "car-7",
+      "car-7"
+    ],
+    "seats": 2,
+    "id": "7"
+  },
+  {
+    "name": "Kia",
+    "status": false,
+    "image": "car-8",
+    "price": 21,
+    "imageDetail": [
+      "car-8",
+      "car-8",
+      "car-8"
+    ],
+    "seats": 4,
+    "id": "8"
+  },
+  {
+    "name": "Mitsubishi",
+    "status": false,
+    "image": "car-9",
+    "price": 94,
+    "imageDetail": [
+      "car-9",
+      "car-9",
+      "car-9"
+    ],
+    "seats": 6,
+    "id": "9"
+  },
+  {
+    "name": "Lexus",
+    "status": false,
+    "image": "car-10",
+    "price": 93,
+    "imageDetail": [
+      "car-10",
+      "car-10",
+      "car-10"
+    ],
+    "seats": 2,
+    "id": "10"
+  },
+  {
+    "name": "Mazda",
+    "status": false,
+    "image": "car-11",
+    "price": 31,
+    "imageDetail": [
+      "car-11",
+      "car-11",
+      "car-11"
+    ],
+    "seats": 4,
+    "id": "11"
+  },
+  {
+    "name": "Subaru",
+    "status": false,
+    "image": "car-12",
+    "price": 85,
+    "imageDetail": [
+      "car-12",
+      "car-12",
+      "car-12"
+    ],
+    "seats": 6,
+    "id": "12"
+  },
+  {
+    "name": "Nissan",
+    "status": false,
+    "image": "car-1",
+    "price": 35,
+    "imageDetail": [
+      "car-1",
+      "car-1",
+      "car-1"
+    ],
+    "seats": 2,
+    "id": "13"
+  },
+  {
+    "name": "Ssangyong",
+    "status": false,
+    "image": "car-2",
+    "price": 44,
+    "imageDetail": [
+      "car-2",
+      "car-2",
+      "car-2"
+    ],
+    "seats": 4,
+    "id": "14"
+  },
+  {
+    "name": "Land Rover",
+    "status": false,
+    "image": "car-3",
+    "price": 76,
+    "imageDetail": [
+      "car-3",
+      "car-3",
+      "car-3"
+    ],
+    "seats": 6,
+    "id": "15"
+  },
+  {
+    "name": "Peugeot",
+    "status": false,
+    "image": "car-4",
+    "price": 0,
+    "imageDetail": [
+      "car-4",
+      "car-4",
+      "car-4"
+    ],
+    "seats": 2,
+    "id": "16"
+  },
+  {
+    "name": "Porsche",
+    "status": false,
+    "image": "car-5",
+    "price": 18,
+    "imageDetail": [
+      "car-5",
+      "car-5",
+      "car-5"
+    ],
+    "seats": 4,
+    "id": "17"
+  },
+  {
+    "name": "Volkswagen",
+    "status": false,
+    "image": "car-6",
+    "price": 2,
+    "imageDetail": [
+      "car-6",
+      "car-6",
+      "car-6"
+    ],
+    "seats": 6,
+    "id": "18"
+  },
+  {
+    "name": "Mercedes Benz",
+    "status": false,
+    "image": "car-7",
+    "price": 44,
+    "imageDetail": [
+      "car-7",
+      "car-7",
+      "car-7"
+    ],
+    "seats": 2,
+    "id": "19"
+  },
+  {
+    "name": "BMW",
+    "status": false,
+    "image": "car-8",
+    "price": 21,
+    "imageDetail": [
+      "car-8",
+      "car-8",
+      "car-8"
+    ],
+    "seats": 4,
+    "id": "20"
+  }
+]

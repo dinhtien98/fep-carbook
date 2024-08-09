@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Link, useParams } from "react-router-dom";
@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
 import { fetchDataId } from "../../redux/carsSlice";
 import { useDispatch, useSelector } from "react-redux";
+import AddCar from "../../components/addCar/AddCar";
 
 export default function Carsingle() {
   const { id } = useParams();
@@ -101,6 +102,7 @@ export default function Carsingle() {
                 <div class="text text-center">
                   <span class="subheading">Thông số kỹ thuật</span>
                   <h1>{item.name}</h1>
+                  <AddCar items={item}/>
                 </div>
               </div>
             </div>
@@ -202,7 +204,6 @@ export default function Carsingle() {
                     </li>
                   </ul>
                 </div>
-
                 <div class="tab-content" id="pills-tabContent">
                   <div
                     class="tab-pane fade show active"
@@ -326,9 +327,7 @@ export default function Carsingle() {
           <div className="row justify-content-center">
             <div className="col-md-12 heading-section text-center ftco-animate mb-5">
               <span className="subheading">Lựa chọn khác</span>
-              <h2 className="mb-2 showcar">
-                Xe được khách hàng yêu thích
-              </h2>
+              <h2 className="mb-2 showcar">Xe được khách hàng yêu thích</h2>
             </div>
           </div>
           <div className="row">

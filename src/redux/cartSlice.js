@@ -1,42 +1,52 @@
 import { createSlice } from "@reduxjs/toolkit";
-let initialState = {};
-if (localStorage.getItem("listPickCar")) {
-  initialState = JSON.parse(localStorage.getItem("listPickCar"));
-} else {
-  initialState = {
-    listPickCar: [],
-  };
-}
+
+
+const initialState = {
+  listPickCar: localStorage.getItem("listPickCar")
+    ? JSON.parse(localStorage.getItem("listPickCar"))
+    : [],
+};
 
 const cartSlice = createSlice({
   name: "cartSlice",
   initialState,
   reducers: {
     addNewCar: (state, action) => {
-      let MaxId = state.listPickCar.reduce((current, item) =>
-        Math.max((current, item.id), 0)
-      );
-      state.listPickCar = [
-        ...state.listPickCar,
-        {
-          id: MaxId<=0?0:MaxId+1,
-          pickUpLocation: action.payload.pickUpLocation,
-          dropOffLocation: action.payload.dropOffLocation,
-          pickUpDate: action.payload.pickUpDate,
-          dropOffDate: action.payload.dropOffDate,
-          car: action.payload.car,
-        },
-      ];
-      localStorage.setItem("listPickCar", JSON.stringify(state));
+      if (!Array.isArray(state.listPickCar)) {
+        state.listPickCar = [];
+      }
+      
+      const maxId = state.listPickCar.reduce((max, item) => {
+        const id = Number(item.id); 
+        return !isNaN(id) ? Math.max(max, id) : max;
+      }, 0);
+      
+      state.listPickCar.push({
+        id: maxId + 1,
+        pickUpLocation: action.payload.pickUpLocation,
+        dropOffLocation: action.payload.dropOffLocation,
+        pickUpDate: action.payload.pickUpDate,
+        dropOffDate: action.payload.dropOffDate,
+        car: action.payload.car,
+        price: action.payload.price,
+      });
+
+      localStorage.setItem("listPickCar", JSON.stringify(state.listPickCar));
     },
     deleteCar: (state, action) => {
-      state.listPickCar = state.listPickCar.filter(
-        (item) => item.id !== action.payload.id
-      );
-      localStorage.setItem("listPickCar", JSON.stringify(state));
+      if (!Array.isArray(state.listPickCar)) {
+        state.listPickCar = [];
+      }
+      
+      state.listPickCar = state.listPickCar.filter(item => item.id !== action.payload.id);
+      localStorage.setItem("listPickCar", JSON.stringify(state.listPickCar));
     },
     editCar: (state, action) => {
-      state.listPickCar = state.listPickCar.map((item) =>
+      if (!Array.isArray(state.listPickCar)) {
+        state.listPickCar = [];
+      }
+      
+      state.listPickCar = state.listPickCar.map(item =>
         item.id === action.payload.id
           ? {
               ...item,
@@ -44,13 +54,14 @@ const cartSlice = createSlice({
               dropOffLocation: action.payload.dropOffLocation,
               pickUpDate: action.payload.pickUpDate,
               dropOffDate: action.payload.dropOffDate,
-              car: action.payload.car,
             }
           : item
       );
-      localStorage.setItem("listPickCar", JSON.stringify(state));
+
+      localStorage.setItem("listPickCar", JSON.stringify(state.listPickCar));
     },
   },
 });
+
 export const { addNewCar, deleteCar, editCar } = cartSlice.actions;
 export default cartSlice.reducer;
