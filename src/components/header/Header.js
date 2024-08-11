@@ -15,6 +15,8 @@ export default function Header() {
     dispatch(fetchDataAll());
   }, [dispatch]);
 
+  const dataCart = JSON.parse(localStorage.getItem("listPickCar"))
+
   const handleInputChange = (event) => {
     const value = event.target.value;
     setInputValue(value);
@@ -95,7 +97,11 @@ export default function Header() {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Cart">
-                <i className="fa-solid fa-bell"></i>
+                <i className="fa-solid fa-bell">
+                  {
+                    dataCart.length>0?<span className="flagNote">!</span>:""
+                  }
+                </i>
               </Link>
             </li>
           </ul>

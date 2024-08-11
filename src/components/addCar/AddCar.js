@@ -21,13 +21,15 @@ export default function AddCar(props) {
     pickUpDate: "",
     dropOffDate: "",
     car: "",
-    price:"",
+    price: "",
   });
+
   const handleClose = () => setShow(false);
   const handleShow = (car) => {
     setSelectedCar(car);
     setShow(true);
   };
+
   useEffect(() => {
     const loadData = localStorage.getItem("pickCar");
     if (loadData) {
@@ -42,36 +44,60 @@ export default function AddCar(props) {
       }
     }
   }, []);
+
   useEffect(() => {
     setItem({
-      pickUpLocation: pickUpLocation,
-      dropOffLocation: dropOffLocation,
-      pickUpDate: pickUpDate,
-      dropOffDate: dropOffDate,
+      pickUpLocation,
+      dropOffLocation,
+      pickUpDate,
+      dropOffDate,
       car: selectedCar,
       price: price
     });
-    setPrice(handle_price())
-  }, [pickUpLocation, dropOffLocation, pickUpDate, dropOffDate, selectedCar,price]);
+    setPrice(handle_price());
+  }, [pickUpLocation, dropOffLocation, pickUpDate, dropOffDate, selectedCar, price]);
 
   const handle_price = () => {
     const start = new Date(pickUpDate);
     const end = new Date(dropOffDate);
 
     const differenceInTime = end - start;
-    const differenceInDays = Math.ceil(
-      differenceInTime / (1000 * 60 * 60 * 24)
-    );
-    const price = items.price * differenceInDays;
-    return price;
+    const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
+    const calculatedPrice = items.price * differenceInDays;
+    return calculatedPrice;
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Validation
+    if (!pickUpLocation || !dropOffLocation || !pickUpDate || !dropOffDate) {
+      alert("Vui lòng điền đầy đủ thông tin.");
+      return;
+    }
+
+    const currentDate = new Date().toISOString().split("T")[0];
+
+    if (pickUpDate < currentDate) {
+      alert("Ngày nhận xe phải từ ngày hiện tại trở về sau.");
+      return;
+    }
+
+    if (dropOffDate < pickUpDate) {
+      alert("Ngày trả xe phải lớn hơn hoặc bằng ngày nhận xe.");
+      return;
+    }
+
+    if (!selectedCar) {
+      alert("Vui lòng chọn xe trước khi đặt xe.");
+      return;
+    }
+
     dispatch(addNewCar(item));
     alert("Xe đã được đặt!");
     handleClose();
   };
+
   return (
     <>
       <Button
@@ -150,7 +176,7 @@ export default function AddCar(props) {
               </div>
               <div className="form-group">
                 <label htmlFor="">Thành tiền</label>
-                <h3>{price?price:0}$</h3>
+                <h3>{price ? price : 0}$</h3>
               </div>
               <div className="form-group">
                 <input

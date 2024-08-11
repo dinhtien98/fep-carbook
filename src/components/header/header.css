@@ -106,24 +106,24 @@
   }
   
 
-  /* Existing styles... */
+  
 
 .input-group {
-  position: relative; /* Ensure the dropdown is positioned relative to this container */
+  position: relative; 
 }
 
 .dropdown-list {
   position: absolute;
-  top: 100%; /* Position it below the input field */
+  top: 100%; 
   left: 0;
   width: 100%;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1050; /* Make sure it's above other elements */
-  max-height: 200px; /* Adjust as needed */
-  overflow-y: auto; /* Scroll if too many items */
+  z-index: 1050; 
+  max-height: 200px; 
+  overflow-y: auto; 
 }
 
 .dropdown-item {
@@ -132,5 +132,11 @@
 }
 
 .dropdown-item:hover {
-  background-color: #f8f9fa; /* Highlight on hover */
+  background-color: #f8f9fa; 
+}
+
+.flagNote{
+  color: red;
+  position: absolute;
+  transform: translate(-25%,-40%);
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Link, useParams } from "react-router-dom";
@@ -200,7 +200,7 @@ export default function Carsingle() {
                 <div class="d-flex justify-content-center">
                   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     <li class="nav-item">
-                      <h1>Features</h1>
+                      <h1>Tính Năng</h1>
                     </li>
                   </ul>
                 </div>
