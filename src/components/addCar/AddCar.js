@@ -23,7 +23,7 @@ export default function AddCar(props) {
     car: "",
     price: "",
   });
-
+  
   const handleClose = () => setShow(false);
   const handleShow = (car) => {
     setSelectedCar(car);

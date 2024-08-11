@@ -98,9 +98,7 @@ export default function Header() {
             <li className="nav-item">
               <Link className="nav-link" to="/Cart">
                 <i className="fa-solid fa-bell">
-                  {
-                    dataCart.length>0?<span className="flagNote">!</span>:""
-                  }
+                  <span className="flagNote">!</span>
                 </i>
               </Link>
             </li>
@@ -134,7 +132,7 @@ export default function Header() {
                     className="dropdown-item"
                     to={`/carsingle/${suggestion.id}`}
                   >
-                    {suggestion.name} 
+                    {suggestion.name}
                   </Link>
                 ))}
               </div>
