@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fep-carbook/static/css/main.eb6debb3.css",
-    "main.js": "/fep-carbook/static/js/main.244133f6.js",
+    "main.css": "/fep-carbook/static/css/main.04108c11.css",
+    "main.js": "/fep-carbook/static/js/main.04cf2919.js",
     "index.html": "/fep-carbook/index.html",
-    "main.eb6debb3.css.map": "/fep-carbook/static/css/main.eb6debb3.css.map",
-    "main.244133f6.js.map": "/fep-carbook/static/js/main.244133f6.js.map"
+    "main.04108c11.css.map": "/fep-carbook/static/css/main.04108c11.css.map",
+    "main.04cf2919.js.map": "/fep-carbook/static/js/main.04cf2919.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb6debb3.css",
-    "static/js/main.244133f6.js"
+    "static/css/main.04108c11.css",
+    "static/js/main.04cf2919.js"
   ]
 }
