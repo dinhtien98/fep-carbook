@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./addcar.css";
 import { Button, Offcanvas } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { addNewCar } from "../../redux/cartSlice";
+import emailjs from '@emailjs/browser';
+import axios from "axios";
 
 export default function AddCar(props) {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const { items } = props;
+  const [email, setEmail] = useState("");
   const [show, setShow] = useState(false);
   const [selectedCar, setSelectedCar] = useState(null);
   const [pickUpLocation, setPickUpLocation] = useState("");
@@ -24,7 +27,7 @@ export default function AddCar(props) {
     car: "",
     price: "",
   });
-  
+
   const handleClose = () => setShow(false);
   const handleShow = (car) => {
     setSelectedCar(car);
@@ -65,14 +68,42 @@ export default function AddCar(props) {
     const differenceInTime = end - start;
     const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
     const calculatedPrice = items.price * differenceInDays;
-    if(calculatedPrice<0) return 0
-    else return calculatedPrice;
+    return calculatedPrice > 0 ? calculatedPrice : 0;
   };
+
+  const handleSendEmail = async () => {
+
+
+    const serviceId = 'service_f9f7bs9';
+    const templateId = 'template_3wm4tn7';
+    const publicKey = 'BotVPlAFB0v0gWst3';
+
+    const data = {
+      service_id: serviceId,
+      template_id: templateId,
+      user_id: publicKey,
+      template_params: {
+        from_name: 'CarBook',
+        from_email:'1ngodinhtien98@gmail.com',
+        to_name: email,
+        to_email: email,
+        message: `Bạn đã đặt xe thành công từ CarBook - Địa điểm nhận xe: ${pickUpLocation} - Địa điểm trả xe: ${dropOffLocation} - Ngày nhận xe: ${pickUpDate} - Ngày trả xe: ${dropOffDate}`,
+      }
+    };
+
+    const url = `https://api.emailjs.com/api/v1.0/email/send`
+    try {
+      const res = await axios.post(url, data);
+      console.log(res.data);
+      setEmail('');
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    
     if (!pickUpLocation || !dropOffLocation || !pickUpDate || !dropOffDate) {
       alert("Vui lòng điền đầy đủ thông tin.");
       return;
@@ -94,11 +125,11 @@ export default function AddCar(props) {
       alert("Vui lòng chọn xe trước khi đặt xe.");
       return;
     }
-
+    handleSendEmail();
     dispatch(addNewCar(item));
-    alert("Xe đã được đặt!");
+    alert("Xe đã được đặt thành công!");
     handleClose();
-    navigate("/cart")
+    navigate("/cart");
   };
 
   return (
@@ -125,6 +156,19 @@ export default function AddCar(props) {
               <h2>Thông tin thuê xe</h2>
               <div className="form-group">
                 <label htmlFor="" className="label">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Nhập vào Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="" className="label">
                   Địa điểm nhận
                 </label>
                 <input
@@ -133,6 +177,7 @@ export default function AddCar(props) {
                   placeholder="Nhập vào địa chỉ"
                   value={pickUpLocation}
                   onChange={(e) => setPickUpLocation(e.target.value)}
+                  required
                 />
               </div>
               <div className="form-group">
@@ -145,6 +190,7 @@ export default function AddCar(props) {
                   placeholder="Nhập vào địa chỉ"
                   value={dropOffLocation}
                   onChange={(e) => setDropOffLocation(e.target.value)}
+                  required
                 />
               </div>
               <div className="d-flex">
@@ -158,6 +204,7 @@ export default function AddCar(props) {
                     id="book_pick_date"
                     value={pickUpDate}
                     onChange={(e) => setPickUpDate(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="form-group pick-drop-date">
@@ -170,6 +217,7 @@ export default function AddCar(props) {
                     id="book_off_date"
                     value={dropOffDate}
                     onChange={(e) => setDropOffDate(e.target.value)}
+                    required
                   />
                 </div>
               </div>

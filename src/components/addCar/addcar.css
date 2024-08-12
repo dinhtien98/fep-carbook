@@ -1,6 +1,6 @@
 .offcanvas{
     border-radius: 25px;
-    max-height: 80vh;
+    max-height: 90vh;
     border: 1px solid black;
 }
 .offcanvas.offcanvas-start{
