@@ -64,7 +64,8 @@ export default function AddCar(props) {
     const differenceInTime = end - start;
     const differenceInDays = Math.ceil(differenceInTime / (1000 * 60 * 60 * 24));
     const calculatedPrice = items.price * differenceInDays;
-    return calculatedPrice;
+    if(calculatedPrice<0) return 0
+    else return calculatedPrice;
   };
 
   const handleSubmit = (event) => {
