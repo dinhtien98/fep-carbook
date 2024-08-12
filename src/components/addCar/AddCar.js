@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./addcar.css";
 import { Button, Offcanvas } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addNewCar } from "../../redux/cartSlice";
 
 export default function AddCar(props) {
+  const navigate=useNavigate()
   const { items } = props;
   const [show, setShow] = useState(false);
   const [selectedCar, setSelectedCar] = useState(null);
@@ -71,7 +72,7 @@ export default function AddCar(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Validation
+    
     if (!pickUpLocation || !dropOffLocation || !pickUpDate || !dropOffDate) {
       alert("Vui lòng điền đầy đủ thông tin.");
       return;
@@ -97,6 +98,7 @@ export default function AddCar(props) {
     dispatch(addNewCar(item));
     alert("Xe đã được đặt!");
     handleClose();
+    navigate("/cart")
   };
 
   return (
